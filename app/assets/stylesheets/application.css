@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* Common settings */
+html {
+ font-size: 15px;
+ line-height: 1.6;
+}
+
+* {
+ /*font-family: 'Open Sans', sans-serif;*/
+ /*color: #181818;*/
+}
+
+a {
+ color: inherit;
+ transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+ text-decoration: none;
+ color: inherit;
+}
+
+ul, ol {
+ list-style-type: none;
+ padding: 0;
+}
+
+/* Navigation */
+.navbar.bg-faded {
+ background: none;
+}
+
+.brand__logo{
+ height: 80px;
+ width: auto;
+}
+
+/*Menu bar*/
+
+.header__menu{
+ /*background-color: rgb(153,206,102);*/
+}
+
+.header__menu .nav-item .nav-link{
+ color: #000;
+ font-weight: 700;
+ font-size: 1.13rem;
+}
+
+.header__menu .nav-item .nav-link:hover{
+ color: rgb(153,206,102);
+ font-weight: 700;
+ font-size: 1.13rem;
+}
+
+.header__bar{
+ height: 10px;
+ background: linear-gradient(-90deg, blue, white, white, rgb(153,206,102))
+}
+
+/*Footer*/
+
+.footer{
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.footer__copyright{
+  color: #fff;
+}
