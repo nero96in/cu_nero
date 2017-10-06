@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Workspace</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>ClubUnion</title>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
 
-</body>
+  <body>
+
+    <!-- header -->
+    <header class="header">
+      <a class="brand d-flex justify-content-center py-3" href="<%= root_path %>">
+        <img class="brand__logo" src="<%=asset_path '8th_logo.png'%>"></img>
+      </a>
+      <div class="header__bar"></div>
+      <div class="container mb-4">
+        <div class="d-flex justify-content-center row">
+          <ul class="header__menu nav nav-justified col-lg-8">
+            <li class="nav-item">
+              <a class="nav-link" href="<%= root_path %>">동연회소개</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= root_path %>">동아리소개</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= root_path %>">일정표</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">자료실</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">건의게시판</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- header -->
+
+    <%= yield %>
+    <!--footer-->
+    <footer class="footer d-flex justify-content-start align-items-center mt-5">
+      <p class="footer__copyright mb-0 pl-4">2017-2017 © 2017 조화와 이해의 제8대 동아리연합회 ALL Rights Reserved.</p>
+      <p class="footer__copyright mb-0 pl-4">Administrator: 전대성</p>
+    </footer>
+    <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"   integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
 </html>
