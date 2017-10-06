@@ -1,6 +1,127 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-sfasdfsadfasdadsfasdfasdsad
-<a href="#">adfasfs</a>
+<main class="main">
+  <div class="container main-inner">
+    <div class="row">
+      <div class="col-lg-1 p-0">
+        <ul class="nav d-flex flex-column main__navigation">
+          <li class="nav-item d-flex justify-content-center align-items-center pr-2 pb-2">
+            <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-file-text-o fa-3x"></i><br />동아리연합회칙</a>
+          </li>
+          <li class="nav-item d-flex justify-content-center align-items-center pr-2 pb-2">
+            <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-handshake-o fa-3x"></i><br />대여규정</a>
+          </li>
+          <li class="nav-item d-flex justify-content-center align-items-center pr-2 pb-2">
+            <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-microphone fa-3x"></i><br />거울방/방음실</a>
+          </li>
+          <li class="nav-item d-flex justify-content-center align-items-center pr-2">
+            <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-check fa-3x"></i><br />대여동아리방</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-11">
+        <div class="row main__top">
+          <section class="main__photo col-lg-8 p-0 pr-2 pb-2" style="background-color: #bbb;">
+            <div id="carouselExampleIndicators-1" class="carousel slide w-100 h-100" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators-1" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators-1" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators-1" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner w-100 h-100" role="listbox">
+                <div class="carousel-item active w-100 h-100">
+                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'CU.jpg'%>" alt="First slide">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'UH.jpg'%>" alt="Second slide">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'CU.jpg'%>" alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators-1" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators-1" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </section>
+          <div class="col-lg-4 p-0">
+            <section class="main__posts w-100 pb-2" style="background-color: #ddd;">
+              <h5 class="pl-4 pt-4"><%= link_to '공지사항', posts_path, class: "posts__title" %></h5>
+              <ul>
+                <li class="pl-5">9월 정기대표자회의 개회 안내</li>
+                <li class="pl-5">학술제 일정 및 컨텐츠 안내</li>
+                <li class="pl-5">서기 교육, 지원금 교육 안내</li>
+                <li class="pl-5">[활동내역서]자주묻는 질문 FAQ</li>
+              </ul>
+            </section>
+            <section class="main__posts w-100 pb-2" style="background-color: #ddd;">
+              <h5 class="posts__title pl-4 pt-4">자료실</h5>
+              <ul>
+                <li class="pl-5">제8대 동아리연합회 서식 모음</li>
+                <li class="pl-5">9월 정기 동아리 대표자 회의 PPT</li>
+                <li class="pl-5">동아리연합회칙 Word 파일</li>
+                <li class="pl-5"></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+        <div class="row main__bottom">
+          <div class="col-lg-3 p-0">
+            <section class="main__posts w-100 pr-2 pb-2" style="background-color: #ddd;">
+              <h5 class="posts__title pl-4 pt-4">가등록동아리</h5>
+              <ul>
+                <li class="pl-5">[긴급상황]곧 부장단회의</li>
+                <li class="pl-5">[긴급상황]곧 대표자회의</li>
+                <li class="pl-5">[긴급상황]곧 전학대회</li>
+                <li class="pl-5">[긴급상황]곧 개강</li>
+              </ul>
+            </section>
+            <section class="main__posts w-100 pr-2" style="background-color: #ddd;">
+              <h5 class="posts__title pl-4 pt-4">정규동아리</h5>
+              <ul>
+                <li class="pl-5">[긴급상황]곧 부장단회의</li>
+                <li class="pl-5">[긴급상황]곧 대표자회의</li>
+                <li class="pl-5">[긴급상황]곧 전학대회</li>
+                <li class="pl-5">[긴급상황]곧 개강</li>
+              </ul>
+            </section>
+          </div>
+          <section class="main__posts-lg col-lg-1 p-0 pr-2" style="background-color: #ddd;">
 
-<%= link_to 'Back', posts_path %>
+          </section>
+          <section class="main__photo col-lg-8 p-0" style="background-color: #ddd;">
+            <div id="carouselExampleIndicators-2" class="carousel slide w-100 h-100" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators-2" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators-2" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators-2" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner w-100 h-100" role="listbox">
+                <div class="carousel-item active w-100 h-100">
+                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'CU.jpg'%>" alt="First slide">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'UH.jpg'%>" alt="Second slide">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'CU.jpg'%>" alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators-2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators-2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
