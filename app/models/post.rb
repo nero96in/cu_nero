@@ -13,4 +13,8 @@ class Post < ActiveRecord::Base
        # so getting keys from the hash and calculating the number of keys
        impressions.group(:ip_address).size.keys.length #TESTED
    end
+   
+   def self.search(search)
+    where("title LIKE ? OR content LIKE ?", "%#{search}%", "%#{search}%")
+   end
 end
