@@ -22,6 +22,9 @@ gem "figaro"
 #for font-awesome
 gem "font-awesome-rails"
 
+# 조회수 확인
+gem 'impressionist'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :download]
+  before_action :log_impression, only: [:show]
+
 
   # GET /posts
   # GET /posts.json
@@ -10,6 +12,12 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+  end
+  
+  def log_impression
+    @hit_post = Post.find(params[:id])
+      # this assumes you have a current_user method in your authentication system
+    @hit_post.impressions.create(ip_address: request.remote_ip)
   end
   
   def download
