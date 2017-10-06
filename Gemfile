@@ -14,6 +14,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
+# for file upload
+gem 'carrierwave', '~> 1.0'
+gem "fog-aws"
+gem "figaro"
+
 #for font-awesome
 gem "font-awesome-rails"
 
@@ -38,6 +43,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rails_db'
 end
 
 group :development do

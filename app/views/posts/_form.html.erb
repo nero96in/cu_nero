@@ -19,7 +19,12 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
+  <div class="field">
+    <%= f.label :avatars %>
+    <%= f.file_field :avatars, multiple: true %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
