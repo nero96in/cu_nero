@@ -1,4 +1,8 @@
 <div class="container">
+  <h2 class="post__header">동아리연합회 일정표</h2>
+  <!--방문자 수: <%#= @total_view_count %> -->
+  <hr/>
+  <br/>
   <%= month_calendar events: @schedules do |date, meetings| %>
     <%= date.day %>
   
