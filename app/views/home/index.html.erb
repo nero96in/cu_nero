@@ -51,19 +51,29 @@
             <section class="main__posts w-100 pb-2" style="background-color: #ddd;">
               <h5 class="pl-4 pt-4"><%= link_to '공지사항', posts_path, class: "posts__title" %></h5>
               <ul>
-                <li class="pl-5">9월 정기대표자회의 개회 안내</li>
-                <li class="pl-5">학술제 일정 및 컨텐츠 안내</li>
-                <li class="pl-5">서기 교육, 지원금 교육 안내</li>
-                <li class="pl-5">[활동내역서]자주묻는 질문 FAQ</li>
+                <% @posts.order("created_at DESC").limit(5).each do |recent_post| %>
+                  <li class="pl-5">
+                    <% if recent_post.title == "" %>
+                      <%= link_to "제목 없음", post_path(recent_post.id) %>
+                    <% else %>
+                      <%= link_to recent_post.title, post_path(recent_post.id) %>
+                    <% end %>
+                  </li>
+                <% end %>
               </ul>
             </section>
             <section class="main__posts w-100 pb-2" style="background-color: #ddd;">
               <h5 class="pl-4 pt-4"><%= link_to '자료실', documents_path, class: "posts__title" %></h5>
               <ul>
-                <li class="pl-5">제8대 동아리연합회 서식 모음</li>
-                <li class="pl-5">9월 정기 동아리 대표자 회의 PPT</li>
-                <li class="pl-5">동아리연합회칙 Word 파일</li>
-                <li class="pl-5"></li>
+                <% @documents.order("created_at DESC").limit(5).each do |recent_document| %>
+                  <li class="pl-5">
+                    <% if recent_document.title == "" %>
+                      <%= link_to "제목 없음", document_path(recent_document.id) %>
+                    <% else %>
+                      <%= link_to recent_document.title, document_path(recent_document.id) %>
+                    <% end %>
+                  </li>
+                <% end %>
               </ul>
             </section>
           </div>
