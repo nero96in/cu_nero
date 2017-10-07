@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :schedules
   resources :suggestions do
     member { get :download }
   end

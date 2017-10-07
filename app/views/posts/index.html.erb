@@ -33,6 +33,10 @@
                 <% else %>
                   <%= link_to post.title, post, class: "post__table_link" %>
                 <% end %>
+                
+                <% if (post.avatars_identifiers == []) == false %>
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                <% end %>
               </td>
 
               <td><%= post.id %></td>

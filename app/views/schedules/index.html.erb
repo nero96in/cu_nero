@@ -1,0 +1,15 @@
+<div class="container">
+  <%= month_calendar events: @schedules do |date, meetings| %>
+    <%= date.day %>
+  
+    <% meetings.each do |meeting| %>
+      <div>
+        <%= meeting.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+<%= link_to 'New Schedule', new_schedule_path %>

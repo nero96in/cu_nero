@@ -28,10 +28,14 @@
             <tr>
               <td><%= suggestion.id %></td>
               <td class="text-left">
-                <% if suggestion.title == "" %>
+                <% if suggestion.title.nil? %>
                   <%= link_to "제목 없음", suggestion, class: "post__table_link" %>
                 <% else %>
                   <%= link_to suggestion.title, suggestion, class: "post__table_link" %>
+                <% end %>
+                
+                <% if (suggestion.avatars_identifiers == []) == false %>
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
                 <% end %>
               </td>
 
