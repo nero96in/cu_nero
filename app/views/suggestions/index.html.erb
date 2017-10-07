@@ -1,14 +1,14 @@
 <div class="container">
-  <h2 class="post__header">공지사항</h2>
+  <h2 class="post__header">건의게시판</h2>
   <!--방문자 수: <%#= @total_view_count %> -->
   <hr/>
   <br/>
   <div class="row">
     <div class="post__show_nav col-2">
       <nav class="nav flex-column nav-pills">
-        <%= link_to '공지사항', suggestions_path, class: "nav-link active" %>
+        <%= link_to '공지사항', posts_path, class: "nav-link" %>
         <%= link_to '자료실', documents_path, class: "nav-link" %>
-        <%= link_to '건의게시판', suggestions_path, class: "nav-link" %>
+        <%= link_to '건의게시판', suggestions_path, class: "nav-link active" %>
       </nav>
     </div>
     <div class="col-1"></div>
@@ -24,29 +24,29 @@
           </tr>
         </thead>
         <tbody>
-          <% @posts.each do |post| %>
+          <% @suggestions.each do |suggestion| %>
             <tr>
-              <td><%= post.id %></td>
+              <td><%= suggestion.id %></td>
               <td class="text-left">
-                <% if post.title == "" %>
-                  <%= link_to "제목 없음", post, class: "post__table_link" %>
+                <% if suggestion.title == "" %>
+                  <%= link_to "제목 없음", suggestion, class: "post__table_link" %>
                 <% else %>
-                  <%= link_to post.title, post, class: "post__table_link" %>
+                  <%= link_to suggestion.title, suggestion, class: "post__table_link" %>
                 <% end %>
               </td>
 
-              <td><%= post.id %></td>
-              <td><%= post.created_at %></td>
-              <td><%= "#{post.unique_impression_count}" %></td>
+              <td><%= suggestion.id %></td>
+              <td><%= suggestion.created_at %></td>
+              <td><%= "#{suggestion.unique_impression_count}" %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
       <div class="post__paginator d-flex justify-content-center">
-        <%= paginate @posts %>
+        <%= paginate @suggestions %>
       </div>
       <div class="post__search d-flex justify-content-center">
-        <%= form_tag(posts_path, :method => "get", id: "search-form", class: "form-inline") do %>
+        <%= form_tag(suggestions_path, :method => "get", id: "search-form", class: "form-inline") do %>
           <%= text_field_tag :search, params[:search], placeholder: "검색어를 입력하세요.", class: "form-control" %>
           <%= button_tag(type: "submit", class: "btn btn-outline-success") do %>
             <i class="fa fa-search" aria-hidden="true"></i>
@@ -61,4 +61,4 @@
 
 <br>
 
-<%= link_to 'New post', new_post_path %>
+<%= link_to 'New suggestion', new_suggestion_path %>

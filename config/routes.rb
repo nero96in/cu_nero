@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :suggestions do
+    member { get :download }
+  end
+  resources :documents do
+    member { get :download }
+  end
   resources :posts do
     member { get :download }
   end

@@ -1,0 +1,50 @@
+<div class="container">
+  <h2 class="post__header">자료실</h2>
+  <hr/>
+  <br/>
+  <div class="row">
+    <div class="post__show_nav col-2">
+      <nav class="nav flex-column nav-pills">
+        <%= link_to '공지사항', posts_path, class: "nav-link" %>
+        <%= link_to '자료실', documents_path, class: "nav-link active" %>
+        <%= link_to '건의게시판', suggestions_path, class: "nav-link" %>
+      </nav>
+    </div>
+    <div class="col-1"></div>
+    <div class="post__show_header col-8">
+      <ul class="row pb-2">
+        <% if @document.title == "" %>
+          <li class="col-12 mb-2 post__show_title"><h3>제목 없음</h3></li>
+        <% else %>
+          <li class="col-12 mb-2 post__show_title"><h3><%= @document.title %></h3></li>
+        <% end %>
+        <li class="col-4 post__show_other">작성자</li>
+        <li class="col-4 post__show_other">조회수  <%= "#{@document.unique_impression_count}" %></li>
+        <li class="col-4"><%= @document.updated_at %></li>
+      </ul>
+      <% @document.avatars.each_with_index do |file, index| %>
+        <i class="fa fa-file-o" aria-hidden="true"></i>
+        <%= link_to "#{@document.avatars_identifiers[index]}", download_document_path(@document), class: "col-12 post__attatchment" %> <br/>
+      <% end %>
+      <div class="post__show_content mt-4">
+        <p><%= @document.content %></p>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end w-100">
+    <%= link_to '목록', documents_path, class: "btn btn-secondary btn-lg" %>
+  </div>
+</div>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<br>
+
+<!-- <%= link_to 'New document', new_document_path %> -->
