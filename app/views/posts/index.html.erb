@@ -43,7 +43,7 @@
         </tbody>
       </table>
       <div class="post__paginator d-flex justify-content-center">
-        <%#= paginate @posts %>
+        <%= paginate @posts %>
       </div>
       <div class="post__search d-flex justify-content-center">
         <%= form_tag(posts_path, :method => "get", id: "search-form", class: "form-inline") do %>

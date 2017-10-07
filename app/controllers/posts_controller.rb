@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all.order("created_at DESC")
     end
+    @posts = @posts.page params[:page]
   end
 
   # GET /posts/1
