@@ -15,6 +15,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 # Calender
 gem "simple_calendar", "~> 2.0"
+# for editor
+gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
 
 # for file upload
 gem 'carrierwave', '~> 1.0'

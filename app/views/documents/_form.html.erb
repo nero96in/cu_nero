@@ -11,20 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :avatars %>
-    <%= f.file_field :avatars, multiple: true %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="container">
+    <div class="field form-group">
+      <%= f.label :title, value: "제목" %><br>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :content, value: "내용" %><br>
+      <%= f.text_area :content, :class => "tinymce form-control", :rows => 20, :cols => 120 %>
+      <%= tinymce %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :avatars, class: "d-none" %>
+      <%= f.file_field :avatars, multiple: true %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
 

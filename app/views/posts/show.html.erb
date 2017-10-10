@@ -27,7 +27,7 @@
         <%= link_to "#{@post.avatars_identifiers[index]}", download_post_path(@post), class: "col-12 post__attatchment" %> <br/>
       <% end %>
       <div class="post__show_content mt-4">
-        <p><%= @post.content %></p>
+        <p><%= @post.content.html_safe %></p>
       </div>
     </div>
   </div>

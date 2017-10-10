@@ -27,7 +27,7 @@
         <%= link_to "#{@suggestion.avatars_identifiers[index]}", download_suggestion_path(@suggestion), class: "col-12 post__attatchment" %> <br/>
       <% end %>
       <div class="post__show_content mt-4">
-        <p><%= @suggestion.content %></p>
+        <p><%= @suggestion.content.html_safe %></p>
       </div>
     </div>
   </div>
