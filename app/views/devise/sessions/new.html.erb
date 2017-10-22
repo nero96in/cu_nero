@@ -6,7 +6,13 @@
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
         <div class="form-group">
-          <%= f.label :email %>
+          <div class="d-flex justify-content-between">
+            <%= f.label :email %>
+            <% flash.each do |key, value| %>
+              <p class="text-danger flash <% key %>}"><%= value %></p>
+            <% end %>
+          </div>
+          
           <%= f.email_field :email, autofocus: true, class: 'form-control' %>
         </div>
         <div class="form-group">

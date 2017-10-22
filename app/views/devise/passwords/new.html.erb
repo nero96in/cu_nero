@@ -1,4 +1,3 @@
-<%= bootstrap_devise_error_messages! %>
 <div class="container devise__card">
   <div class="card devise-bs devise__card">
     <div class="card-header">
@@ -7,7 +6,15 @@
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: "form" }) do |f| %>
         <div class="form-group">
-          <%= f.label :email %>
+          <div class="d-flex justify-content-between">
+            <%= f.label :email %>
+            <% resource.errors.each do |field, msg| %>
+              <% if field == :email %>
+                <p class="text-danger"><%= msg %></p>
+              <% end %>
+            <% end %>
+          </div>
+         
           <%= f.email_field :email, autofocus: true, class: 'form-control' %>
         </div>
   
