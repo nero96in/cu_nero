@@ -1,7 +1,7 @@
 <div class="simple-calendar">
   <div class="calendar-heading d-flex justify-content-center mb-4">
     <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, calendar.url_for_previous_view, class: "pr-2"%>
-    <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+    <span class="calendar-title"><%= start_date.year %> <%= t('date.month_names')[start_date.month] %></span>
     <%= link_to '<i class="fa fa-arrow-right" aria-hidden="true"></i>'.html_safe, calendar.url_for_next_view, class: "pl-2" %>
   </div>
 

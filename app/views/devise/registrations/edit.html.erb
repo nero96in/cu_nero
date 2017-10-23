@@ -6,6 +6,30 @@
     </div>
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <div class="d-flex justify-content-between">
+          <div class="form-group">
+            <div class="d-flex justify-content-between">
+              <%= f.label :name %>
+              <% resource.errors.each do |field, msg| %>
+                <% if field == :name %>
+                  <p class="text-danger"><%= msg %></p>
+                <% end %>
+              <% end %>
+            </div>
+            <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+          </div>
+          <div class="form-group w-50">
+            <div class="d-flex justify-content-between">
+              <%= f.label :club %>
+              <% resource.errors.each do |field, msg| %>
+                <% if field == :club %>
+                  <p class="text-danger"><%= msg %></p>
+                <% end %>
+              <% end %>
+            </div>
+            <%= f.select :club, options_for_select(['CU', '다이제']), {}, {class: 'custom-select w-100'} %>
+          </div>
+        </div>
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <%= f.label :email %>
@@ -20,11 +44,7 @@
         <div class="form-group">
           <div class="d-flex justify-content-between">
             <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it', default: "leave blank if you don't want to change it") %>)</i>
-            <% resource.errors.each do |field, msg| %>
-              <% if field == :password %>
-                <p class="text-danger"><%= msg %></p>
-              <% end %>
-            <% end %>
+            <p class="text-danger">6자리 이상의 비밀번호를 입력해주세요.</p>
           </div>
           <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
         </div>

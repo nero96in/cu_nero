@@ -22,6 +22,8 @@ ko:
               blank: "Please Specify Last Name"
     attributes:
       user:
+        name: "이름"
+        club: "동아리"
         confirmation_sent_at: "확인 메일 전송 시간"
         confirmation_token: "확인 토큰"
         confirmed_at: "확인된 시간"
