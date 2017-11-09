@@ -14,40 +14,73 @@
   
   <!--<p id="notice"><%#= notice %></p>-->
     <!-- header -->
-    <header class="header">
-      <a class="brand d-flex justify-content-center py-3" href="<%= root_path %>">
-        <img class="brand__logo" src="<%=asset_path '8th_logo.png'%>"></img>
-      </a>
-      <div class="header__bar"></div>
-      <div class="container mb-4">
-        <div class="d-flex justify-content-center row">
-          <ul class="header__menu nav nav-justified col-lg-8">
-            <li class="nav-item">
-              <a class="nav-link" href="<%= root_path %>">동연회소개</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<%= root_path %>">동아리소개</a>
-            </li>
-            <li class="nav-item">
-              <%= link_to '일정표', schedules_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to '자료실', documents_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to '건의게시판', suggestions_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <% if user_signed_in? %>
-                <%= link_to '로그아웃', destroy_user_session_path, class: "nav-link", method: "delete" %>
-              <% else %>
-                <%= link_to '로그인', new_user_session_path, class: "nav-link" %>
-              <% end %>
-            </li>
-          </ul>
+    <header class="header container">
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <% if user_signed_in? %>
+              <%= link_to '로그아웃', destroy_user_session_path, class: "nav-link", method: "delete" %>
+            <% else %>
+              <%= link_to '로그인', new_user_session_path, class: "nav-link pb-0" %>
+              <%= link_to '회원가입', new_user_registration_path, class: "nav-link pb-0" %>
+            <% end %>
+          </div>
         </div>
-      </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg navbar-light align-items-end pt-1 pb-0 px-0 mb-3">
+        <a class="brand d-flex justify-content-center" href="<%= root_path %>">
+          <img class="brand__logo" src="<%=asset_path '8th_logo.png'%>"></img>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav header__menu">
+            <a class="nav-link nav-item" href="<%= root_path %>">동연회소개</a>
+            <a class="nav-link nav-item" href="<%= root_path %>">동아리소개</a>
+            <%= link_to '일정표', schedules_path, class: "nav-link nav-item" %>
+            <%= link_to '자료실', documents_path, class: "nav-link nav-item" %>
+            <%= link_to '건의게시판', suggestions_path, class: "nav-link nav-item" %>
+          </div>
+        </div>
+      </nav>
     </header>
+    
+    <!--<header class="header">-->
+    <!--  <a class="brand d-flex justify-content-center py-3" href="<%#= root_path %>">-->
+    <!--    <img class="brand__logo" src="<%#=asset_path '8th_logo.png'%>"></img>-->
+    <!--  </a>-->
+    <!--  <div class="header__bar"></div>-->
+    <!--  <div class="container mb-4">-->
+    <!--    <div class="d-flex justify-content-center row">-->
+    <!--      <ul class="header__menu nav nav-justified col-lg-8">-->
+    <!--        <li class="nav-item">-->
+    <!--          <a class="nav-link" href="<%#= root_path %>">동연회소개</a>-->
+    <!--        </li>-->
+    <!--        <li class="nav-item">-->
+    <!--          <a class="nav-link" href="<%#= root_path %>">동아리소개</a>-->
+    <!--        </li>-->
+    <!--        <li class="nav-item">-->
+    <!--          <%#= link_to '일정표', schedules_path, class: "nav-link" %>-->
+    <!--        </li>-->
+    <!--        <li class="nav-item">-->
+    <!--          <%#= link_to '자료실', documents_path, class: "nav-link" %>-->
+    <!--        </li>-->
+    <!--        <li class="nav-item">-->
+    <!--          <%#= link_to '건의게시판', suggestions_path, class: "nav-link" %>-->
+    <!--        </li>-->
+    <!--        <li class="nav-item">-->
+    <!--          <%# if user_signed_in? %>-->
+    <!--            <%#= link_to '로그아웃', destroy_user_session_path, class: "nav-link", method: "delete" %>-->
+    <!--          <%# else %>-->
+    <!--            <%#= link_to '로그인', new_user_session_path, class: "nav-link" %>-->
+    <!--          <%# end %>-->
+    <!--        </li>-->
+    <!--      </ul>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</header>-->
+    
     <!-- header -->
 
     <%= yield %>

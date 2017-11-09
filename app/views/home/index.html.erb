@@ -1,131 +1,197 @@
-<main class="main">
-  <div class="container main-inner">
-    <div class="row">
-      <div class="col-lg-1 p-0">
-        <ul class="nav d-flex flex-column main__navigation">
-          <li class="nav-item d-flex justify-content-center align-items-center pr-2 pb-2">
-            <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-file-text-o fa-3x"></i><br />동아리연합회칙</a>
-          </li>
-          <li class="nav-item d-flex justify-content-center align-items-center pr-2 pb-2">
-            <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-handshake-o fa-3x"></i><br />대여규정</a>
-          </li>
-          <li class="nav-item d-flex justify-content-center align-items-center pr-2 pb-2">
-            <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-microphone fa-3x"></i><br />거울방/방음실</a>
-          </li>
-          <li class="nav-item d-flex justify-content-center align-items-center pr-2">
-            <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-check fa-3x"></i><br />대여동아리방</a>
-          </li>
-        </ul>
+<main class="main container">
+  <div class="main__upper row pb-3 mb-3">
+    <div id="carouselExampleIndicators" class="main__banner carousel slide col-9" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner h-100">
+        <div class="carousel-item h-100 active">
+          <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'sample_image.png'%>" alt="First slide">
+        </div>
+        <div class="carousel-item h-100">
+          <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'sample_image.png'%>" alt="Second slide">
+        </div>
+        <div class="carousel-item h-100">
+          <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'sample_image.png'%>" alt="Third slide">
+        </div>
       </div>
-      <div class="col-lg-11">
-        <div class="row main__top">
-          <section class="main__photo col-lg-8 p-0 pr-2 pb-2" style="background-color: #bbb;">
-            <div id="carouselExampleIndicators-1" class="carousel slide w-100 h-100" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators-1" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators-1" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators-1" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner w-100 h-100" role="listbox">
-                <div class="carousel-item active w-100 h-100">
-                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'CU.jpg'%>" alt="First slide">
-                </div>
-                <div class="carousel-item w-100 h-100">
-                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'UH.jpg'%>" alt="Second slide">
-                </div>
-                <div class="carousel-item w-100 h-100">
-                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'CU.jpg'%>" alt="Third slide">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators-1" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators-1" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </section>
-          <div class="col-lg-4 p-0">
-            <section class="main__posts w-100 pb-2" style="background-color: #ddd;">
-              <h5 class="pl-4 pt-4"><%= link_to '공지사항', posts_path, class: "posts__title" %></h5>
-              <ul>
-                <% @posts.order("created_at DESC").limit(5).each do |recent_post| %>
-                  <li class="pl-5">
-                    <% if recent_post.title == "" %>
-                      <%= link_to "제목 없음", post_path(recent_post.id) %>
-                    <% else %>
-                      <%= link_to recent_post.title, post_path(recent_post.id) %>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
-            </section>
-            <section class="main__posts w-100 pb-2" style="background-color: #ddd;">
-              <h5 class="pl-4 pt-4"><%= link_to '자료실', documents_path, class: "posts__title" %></h5>
-              <ul>
-                <% @documents.order("created_at DESC").limit(5).each do |recent_document| %>
-                  <li class="pl-5">
-                    <% if recent_document.title == "" %>
-                      <%= link_to "제목 없음", document_path(recent_document.id) %>
-                    <% else %>
-                      <%= link_to recent_document.title, document_path(recent_document.id) %>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
-            </section>
-          </div>
-        </div>
-        <div class="row main__bottom">
-          <div class="col-lg-3 p-0">
-            <section class="main__posts w-100 pr-2 pb-2" style="background-color: #ddd;">
-              <h5 class="posts__title pl-4 pt-4"></h5>
-              <ul>
-               
-              </ul>
-            </section>
-            <section class="main__posts w-100 pr-2" style="background-color: #ddd;">
-              <h5 class="posts__title pl-4 pt-4"></h5>
-              <ul>
-                
-              </ul>
-            </section>
-          </div>
-          <section class="main__posts-lg col-lg-1 p-0 pr-2" style="background-color: #ddd;">
-
-          </section>
-          <section class="main__photo col-lg-8 p-0" style="background-color: #ddd;">
-            <div id="carouselExampleIndicators-2" class="carousel slide w-100 h-100" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators-2" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators-2" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators-2" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner w-100 h-100" role="listbox">
-                <div class="carousel-item active w-100 h-100">
-                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'CU.jpg'%>" alt="First slide">
-                </div>
-                <div class="carousel-item w-100 h-100">
-                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'UH.jpg'%>" alt="Second slide">
-                </div>
-                <div class="carousel-item w-100 h-100">
-                  <img class="d-block img-fluid w-100 h-100" src="<%=asset_path 'CU.jpg'%>" alt="Third slide">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators-2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators-2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </section>
-        </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="col-3 main__poster">
+      <div class="d-flex justify-content-between align-items-end">
+        <h3 class="main__poster_info"><i class="fa fa-history" aria-hidden="true"></i> 요즘행사</h3>
+        <i class="fa fa-plus pr-2" aria-hidden="true"></i>
+      </div>
+      <hr class="mb-2 mt-2">
+      <img class="main__poster_image d-block w-100 h-auto" src="<%=asset_path 'sample_poster.png'%>">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-4 main__section">
+      <div class="section__title d-flex justify-content-between align-items-center">
+        <button type="button" class="btn btn-success">공지사항</button>
+        <i class="fa fa-plus pr-2 text-align-end" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="col-3 main__section">
+      <div class="section__title d-flex justify-content-between align-items-center">
+        <button type="button" class="btn btn-success">공지사항</button>
+        <i class="fa fa-plus pr-2 text-align-end" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="col-5 main__section">
+      <div class="section__title d-flex justify-content-between align-items-center">
+        <button type="button" class="btn btn-success">동아리 앨범</button>
+        <i class="fa fa-plus pr-2 text-align-end" aria-hidden="true"></i>
       </div>
     </div>
   </div>
 </main>
+
+
+
+
+
+
+<!--<main class="main">-->
+<!--  <div class="container main-inner">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-11">-->
+<!--        <div class="row main__top">-->
+<!--          <section class="main__photo col-lg-8 p-0 pr-2 pb-2" style="background-color: #bbb;">-->
+<!--            <div id="carouselExampleIndicators-1" class="carousel slide w-100 h-100" data-ride="carousel">-->
+<!--              <ol class="carousel-indicators">-->
+<!--                <li data-target="#carouselExampleIndicators-1" data-slide-to="0" class="active"></li>-->
+<!--                <li data-target="#carouselExampleIndicators-1" data-slide-to="1"></li>-->
+<!--                <li data-target="#carouselExampleIndicators-1" data-slide-to="2"></li>-->
+<!--              </ol>-->
+<!--              <div class="carousel-inner w-100 h-100" role="listbox">-->
+<!--                <div class="carousel-item active w-100 h-100">-->
+<!--                  <img class="d-block img-fluid w-100 h-100" src="<%#=asset_path 'CU.jpg'%>" alt="First slide">-->
+<!--                </div>-->
+<!--                <div class="carousel-item w-100 h-100">-->
+<!--                  <img class="d-block img-fluid w-100 h-100" src="<%#=asset_path 'UH.jpg'%>" alt="Second slide">-->
+<!--                </div>-->
+<!--                <div class="carousel-item w-100 h-100">-->
+<!--                  <img class="d-block img-fluid w-100 h-100" src="<%#=asset_path 'CU.jpg'%>" alt="Third slide">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <a class="carousel-control-prev" href="#carouselExampleIndicators-1" role="button" data-slide="prev">-->
+<!--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                <span class="sr-only">Previous</span>-->
+<!--              </a>-->
+<!--              <a class="carousel-control-next" href="#carouselExampleIndicators-1" role="button" data-slide="next">-->
+<!--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                <span class="sr-only">Next</span>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </section>-->
+<!--          <div class="col-lg-4 p-0">-->
+<!--            <section class="main__posts w-100 pb-2" style="background-color: #ddd;">-->
+<!--              <h5 class="pl-4 pt-4"><%#= link_to '공지사항', posts_path, class: "posts__title" %></h5>-->
+<!--              <ul>-->
+<!--                <%# @posts.order("created_at DESC").limit(5).each do |recent_post| %>-->
+<!--                  <li class="pl-5">-->
+<!--                    <%# if recent_post.title == "" %>-->
+<!--                      <%#= link_to "제목 없음", post_path(recent_post.id) %>-->
+<!--                    <%# else %>-->
+<!--                      <%#= link_to recent_post.title, post_path(recent_post.id) %>-->
+<!--                    <%# end %>-->
+<!--                  </li>-->
+<!--                <%# end %>-->
+<!--              </ul>-->
+<!--            </section>-->
+<!--            <section class="main__posts w-100 pb-2" style="background-color: #ddd;">-->
+<!--              <h5 class="pl-4 pt-4"><%#= link_to '자료실', documents_path, class: "posts__title" %></h5>-->
+<!--              <ul>-->
+<!--                <%# @documents.order("created_at DESC").limit(5).each do |recent_document| %>-->
+<!--                  <li class="pl-5">-->
+<!--                    <%# if recent_document.title == "" %>-->
+<!--                      <%#= link_to "제목 없음", document_path(recent_document.id) %>-->
+<!--                    <%# else %>-->
+<!--                      <%#= link_to recent_document.title, document_path(recent_document.id) %>-->
+<!--                    <%# end %>-->
+<!--                  </li>-->
+<!--                <%# end %>-->
+<!--              </ul>-->
+<!--            </section>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="row main__bottom">-->
+<!--          <div class="col-lg-3 p-0">-->
+<!--            <section class="main__posts w-100 pr-2 pb-2" style="background-color: #ddd;">-->
+<!--              <h5 class="posts__title pl-4 pt-4"></h5>-->
+<!--              <ul>-->
+               
+<!--              </ul>-->
+<!--            </section>-->
+<!--            <section class="main__posts w-100 pr-2" style="background-color: #ddd;">-->
+<!--              <h5 class="posts__title pl-4 pt-4"></h5>-->
+<!--              <ul>-->
+                
+<!--              </ul>-->
+<!--            </section>-->
+<!--          </div>-->
+<!--          <section class="main__posts-lg col-lg-1 p-0 pr-2" style="background-color: #ddd;">-->
+
+<!--          </section>-->
+<!--          <section class="main__photo col-lg-8 p-0" style="background-color: #ddd;">-->
+<!--            <div id="carouselExampleIndicators-2" class="carousel slide w-100 h-100" data-ride="carousel">-->
+<!--              <ol class="carousel-indicators">-->
+<!--                <li data-target="#carouselExampleIndicators-2" data-slide-to="0" class="active"></li>-->
+<!--                <li data-target="#carouselExampleIndicators-2" data-slide-to="1"></li>-->
+<!--                <li data-target="#carouselExampleIndicators-2" data-slide-to="2"></li>-->
+<!--              </ol>-->
+<!--              <div class="carousel-inner w-100 h-100" role="listbox">-->
+<!--                <div class="carousel-item active w-100 h-100">-->
+<!--                  <img class="d-block img-fluid w-100 h-100" src="<%#=asset_path 'CU.jpg'%>" alt="First slide">-->
+<!--                </div>-->
+<!--                <div class="carousel-item w-100 h-100">-->
+<!--                  <img class="d-block img-fluid w-100 h-100" src="<%#=asset_path 'UH.jpg'%>" alt="Second slide">-->
+<!--                </div>-->
+<!--                <div class="carousel-item w-100 h-100">-->
+<!--                  <img class="d-block img-fluid w-100 h-100" src="<%#=asset_path 'CU.jpg'%>" alt="Third slide">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <a class="carousel-control-prev" href="#carouselExampleIndicators-2" role="button" data-slide="prev">-->
+<!--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                <span class="sr-only">Previous</span>-->
+<!--              </a>-->
+<!--              <a class="carousel-control-next" href="#carouselExampleIndicators-2" role="button" data-slide="next">-->
+<!--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                <span class="sr-only">Next</span>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </section>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</main>-->
+
+<!--<div class="col-lg-1 p-0">-->
+      <!--  <ul class="nav d-flex flex-column main__navigation">-->
+      <!--    <li class="nav-item d-flex justify-content-center align-items-center pr-2 pb-2">-->
+      <!--      <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-file-text-o fa-3x"></i><br />동아리연합회칙</a>-->
+      <!--    </li>-->
+      <!--    <li class="nav-item d-flex justify-content-center align-items-center pr-2 pb-2">-->
+      <!--      <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-handshake-o fa-3x"></i><br />대여규정</a>-->
+      <!--    </li>-->
+      <!--    <li class="nav-item d-flex justify-content-center align-items-center pr-2 pb-2">-->
+      <!--      <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-microphone fa-3x"></i><br />거울방/방음실</a>-->
+      <!--    </li>-->
+      <!--    <li class="nav-item d-flex justify-content-center align-items-center pr-2">-->
+      <!--      <a class="nav-link p-0" href="#"><i class="nav-icons fa fa-check fa-3x"></i><br />대여동아리방</a>-->
+      <!--    </li>-->
+      <!--  </ul>-->
+      <!--</div>-->

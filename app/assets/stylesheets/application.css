@@ -51,31 +51,28 @@ ul, ol {
 }
 
 .brand__logo{
- height: 80px;
+ height: 60px;
  width: auto;
 }
 
 /*Menu bar*/
 
-.header__menu{
- /*background-color: rgb(153,206,102);*/
+.header .navbar.pt-1{
+ border-bottom: 1px solid #ddd;
 }
 
-.header__menu .nav-item .nav-link{
+.header__menu .nav-item.nav-link{
  color: #000;
  font-weight: 700;
- font-size: 1.13rem;
+ font-size: 1rem;
+ margin-left: 2rem;
 }
 
-.header__menu .nav-item .nav-link:hover{
+.header__menu .nav-item.nav-link:hover{
  color: rgb(153,206,102);
  font-weight: 700;
- font-size: 1.13rem;
-}
-
-.header__bar{
- height: 10px;
- background: linear-gradient(-90deg, blue, white, white, rgb(153,206,102))
+ font-size: 1rem;
+ margin-left: 2rem;
 }
 
 /*Footer*/
