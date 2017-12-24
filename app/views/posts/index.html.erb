@@ -1,18 +1,20 @@
 <div class="container">
-  <h2 class="post__header">공지사항</h2>
+  <div class="post__header"></div>
   <!--방문자 수: <%#= @total_view_count %> -->
   <hr/>
   <br/>
   <div class="row">
-    <div class="post__show_nav col-2">
-      <nav class="nav flex-column nav-pills">
-        <%= link_to '공지사항', suggestions_path, class: "nav-link active" %>
-        <%= link_to '자료실', documents_path, class: "nav-link" %>
-        <%= link_to '건의게시판', suggestions_path, class: "nav-link" %>
+    <div class="post__show_nav col-2 p-0 ml-3">
+      <nav class="nav flex-column">
+        <%= link_to '공지사항', posts_path, class: "nav-link py-3 m-0 active" %>
+        <%= link_to '자료실', documents_path, class: "nav-link py-3 m-0" %>
+        <%= link_to '건의게시판', suggestions_path, class: "nav-link py-3 m-0" %>
       </nav>
     </div>
     <div class="col-1"></div>
     <div class="col-8 post__table">
+      <h3 class = "post__table_title">공지사항</h3>
+      <hr/>
       <table class="table thead-default text-center col-8">
         <thead>
           <tr>

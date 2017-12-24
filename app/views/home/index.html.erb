@@ -40,14 +40,40 @@
     <div class="col-4 main__section">
       <div class="section__title d-flex justify-content-between align-items-center">
         <button type="button" class="btn btn-success">공지사항</button>
-        <i class="fa fa-plus pr-2 text-align-end" aria-hidden="true"></i>
+        <%= link_to posts_path, class: "main__section_link" do %>
+            <i class="fa fa-plus pr-2 text-align-end" aria-hidden="true"></i>
+        <% end %>
       </div>
+      <ul>
+        <% @posts.order("created_at DESC").limit(5).each do |recent_post| %>
+          <li class="py-1">
+            <% if recent_post.title == "" %>
+              <%= link_to "제목 없음", post_path(recent_post.id), class: "main__section_link" %>
+            <% else %>
+              <%= link_to recent_post.title, post_path(recent_post.id), class: "main__section_link" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
     <div class="col-3 main__section">
       <div class="section__title d-flex justify-content-between align-items-center">
-        <button type="button" class="btn btn-success">공지사항</button>
-        <i class="fa fa-plus pr-2 text-align-end" aria-hidden="true"></i>
+        <button type="button" class="btn btn-success">자료실</button>
+        <%= link_to documents_path, class: "main__section_link" do %>
+            <i class="fa fa-plus pr-2 text-align-end" aria-hidden="true"></i>
+        <% end %>
       </div>
+      <ul>
+        <% @documents.order("created_at DESC").limit(5).each do |recent_document| %>
+          <li class="py-1">
+            <% if recent_document.title == "" %>
+              <%= link_to "제목 없음", document_path(recent_document.id), class: "main__section_link" %>
+            <% else %>
+              <%= link_to recent_document.title, document_path(recent_document.id), class: "main__section_link" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
     <div class="col-5 main__section">
       <div class="section__title d-flex justify-content-between align-items-center">
@@ -113,17 +139,7 @@
 <!--            </section>-->
 <!--            <section class="main__posts w-100 pb-2" style="background-color: #ddd;">-->
 <!--              <h5 class="pl-4 pt-4"><%#= link_to '자료실', documents_path, class: "posts__title" %></h5>-->
-<!--              <ul>-->
-<!--                <%# @documents.order("created_at DESC").limit(5).each do |recent_document| %>-->
-<!--                  <li class="pl-5">-->
-<!--                    <%# if recent_document.title == "" %>-->
-<!--                      <%#= link_to "제목 없음", document_path(recent_document.id) %>-->
-<!--                    <%# else %>-->
-<!--                      <%#= link_to recent_document.title, document_path(recent_document.id) %>-->
-<!--                    <%# end %>-->
-<!--                  </li>-->
-<!--                <%# end %>-->
-<!--              </ul>-->
+            
 <!--            </section>-->
 <!--          </div>-->
 <!--        </div>-->

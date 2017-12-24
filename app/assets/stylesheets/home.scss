@@ -28,9 +28,19 @@
   height: 200px;
 }
 
+.main__section{
+  height: 200px;
+  border-bottom: 1px solid #bbb;
+}
 
+.main__section_link{
+  color: #444;
+  font-size: 0.93rem;
+}
 
-
+.main__section_link:hover{
+  color: black;
+}
 
 /*Main*/
 // .main{
