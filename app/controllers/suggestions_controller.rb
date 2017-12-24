@@ -18,6 +18,7 @@ class SuggestionsController < ApplicationController
   # GET /suggestions/1
   # GET /suggestions/1.json
   def show
+    @author = User.find(@suggestion.user_id)
   end
   
   def log_impression
@@ -44,6 +45,7 @@ class SuggestionsController < ApplicationController
   # suggestion /suggestions.json
   def create
     @suggestion = Suggestion.new(suggestion_params)
+    @suggestion.user_id = current_user.id
 
     respond_to do |format|
       if @suggestion.save

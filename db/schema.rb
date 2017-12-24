@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20171023161246) do
   create_table "documents", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "avatars"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20171023161246) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "avatars"
@@ -78,6 +80,7 @@ ActiveRecord::Schema.define(version: 20171023161246) do
   create_table "suggestions", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "avatars"

@@ -18,6 +18,7 @@ class DocumentsController < ApplicationController
   # GET /documents/1
   # GET /documents/1.json
   def show
+    @author = User.find(@document.user_id)
   end
   
   def log_impression
@@ -44,6 +45,7 @@ class DocumentsController < ApplicationController
   # document /documents.json
   def create
     @document = Document.new(document_params)
+    @document.user_id = current_user.id
 
     respond_to do |format|
       if @document.save

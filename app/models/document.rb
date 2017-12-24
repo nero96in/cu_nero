@@ -2,7 +2,7 @@ class Document < ActiveRecord::Base
   resourcify
   mount_uploaders :avatars, AvatarUploader
   serialize :avatars, JSON # If you use SQLite, add this line.
-  
+  belongs_to :user
   has_many :impressions, :as=>:impressionable
  
    def impression_count

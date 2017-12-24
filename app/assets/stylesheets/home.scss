@@ -30,7 +30,12 @@
 
 .main__section{
   height: 200px;
-  border-bottom: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+}
+
+.main__section:last-child{
+  height: 200px;
+  border: none;
 }
 
 .main__section_link{
